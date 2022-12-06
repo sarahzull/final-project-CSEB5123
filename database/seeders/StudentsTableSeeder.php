@@ -17,14 +17,12 @@ class StudentsTableSeeder extends Seeder
     {
         $students = [
             [
-                'id'             => 1,
+                'student_id'     => 'SW01081924',
                 'name'           => 'Siti Nursarah Binti Muhd Zulkapli',
-                'student_id'          => 'SW01081924',
             ],
             [
-                'id'             => 2,
+                'student_id'     => 'SW01081957',
                 'name'           => 'Nur Fadlhlin Ellieya Binti Mohd Zainizam',
-                'student_id'          => 'SW01081957',
             ],
         ];
 

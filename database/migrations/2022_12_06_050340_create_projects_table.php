@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->id();
+            $table->engine = 'InnoDB';
+            $table->bigIncrements('id');
+            $table->string('student_id');
             $table->string('title');
             $table->date('start_date');
             $table->date('end_date');
