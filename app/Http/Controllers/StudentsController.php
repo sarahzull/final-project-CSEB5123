@@ -11,6 +11,21 @@ class StudentsController extends Controller
     {
         $students = Student::all();
 
-        return view('students', compact('students'));
+        return view('students.index', compact('students'));
+    }
+
+    public function create()
+    {
+        return view('students.create');
+    }
+
+    public function store(Request $request)
+    {
+        Student::create([
+            'student_id' => $request->student_id,
+            'name' => $request->name
+        ]);
+
+        return redirect(route('students.index'));
     }
 }

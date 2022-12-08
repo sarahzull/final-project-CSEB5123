@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LecturersController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('students', [StudentsController::class, 'index']);
+Route::prefix('/students')->group(function () {
+    Route::get('/', [StudentsController::class, 'index'])->name('students.index');
+    Route::get('/create', [StudentsController::class, 'create'])->name('students.create');
+    Route::post('/', [StudentsController::class, 'store'])->name('students.store');
+});
+
+Route::get('lecturers', [LecturersController::class, 'index']);
+
+Route::get('roles', [RolesController::class, 'index']);
