@@ -39,6 +39,12 @@ class ProjectsController extends Controller
         return redirect(route('projects.index'));
     }
 
+    public function show($id) 
+    {
+        $project = Project::with(['student', 'supervisor', 'examinerOne', 'examinerTwo'])->findOrFail($id);
+        return view('projects.show', compact('project'));
+    }
+
     public function destroy($id)
     {
         Project::destroy($id);

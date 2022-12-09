@@ -47,7 +47,7 @@
                     @foreach($students as $student)
                       <tr class="bg-white border font-sans">
                         <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300 text-center">
-                          {{ $student->id ?? ''  }}
+                          {{ $student->student_id ?? ''  }}
                         </td>
                         <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                           {{ $student->name ?? ''  }}
@@ -63,7 +63,7 @@
                               </a>
                             </div>
                             <div>
-                              <form action="{{ route('students.destroy', $student->id) }}" method="POST">
+                              <form action="{{ route('students.destroy', $student->student_id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-slate-400 text-sm text-center hover:text-rose-600">

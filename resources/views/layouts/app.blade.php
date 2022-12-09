@@ -53,9 +53,6 @@
               <a href="/projects" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Projects</a>
               <a href="/students" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Students</a>
               <a href="/lecturers" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Lecturers</a>
-              <a href="/roles" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Roles</a>
-              <a href="/supervisors" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Supervisors</a>
-              <a href="/examiners" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Examiners</a>
             </div>
           </div>
         </div>
@@ -71,7 +68,7 @@
       </div>
     </div>
   
-    {{-- <!-- Mobile menu, show/hide based on menu state. -->
+    <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pt-2 pb-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -83,7 +80,7 @@
   
         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
       </div>
-    </div> --}}
+    </div>
   </nav>
   <!-- navbar end -->
 

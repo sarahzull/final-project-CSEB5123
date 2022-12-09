@@ -42,12 +42,6 @@
                         Supervisor
                       </th>
                       <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
-                        Examiner 1
-                      </th>
-                      <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
-                        Examiner 2
-                      </th>
-                      <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                         
                       </th>
                     </tr>
@@ -66,14 +60,10 @@
                         <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                           {{ $project->supervisor->name ?? '' }}
                         </td>
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                          {{ $project->examinerOne->name ?? '' }}
-                        </td>
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                          {{ $project->examinerTwo->name ?? '' }}
-                        </td>
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                          
+                        <td class="text-center text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
+                          <a type="button" class="inline-block px-6 py-2.5 bg-cyan-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-cyan-700 focus:bg-cyan-700 focus:outline-none focus:ring-0 active:bg-cyan-800 transition duration-150 ease-in-out" href="{{ route('projects.show', $project->id)}}">
+                            View Project
+                          </a>
                         </td>
                         {{-- <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                           <div class="flex justify-center gap-3">
