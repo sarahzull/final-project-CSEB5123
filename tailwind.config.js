@@ -6,6 +6,12 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        "Inter, sans-serif",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+    },
     container: {
       center: true,
     },

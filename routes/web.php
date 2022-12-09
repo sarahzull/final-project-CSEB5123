@@ -24,6 +24,7 @@ Route::prefix('/students')->group(function () {
     Route::get('/', [StudentsController::class, 'index'])->name('students.index');
     Route::get('/create', [StudentsController::class, 'create'])->name('students.create');
     Route::post('/', [StudentsController::class, 'store'])->name('students.store');
+    Route::delete('/{id}', [StudentsController::class, 'destroy'])->name('students.destroy');
 });
 
 Route::get('lecturers', [LecturersController::class, 'index']);
