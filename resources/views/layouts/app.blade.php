@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/b7848caaf8.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
   @vite('resources/css/app.css')
 </head>
 <body class="text-gray-600 font-body">
@@ -40,20 +41,21 @@
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex flex-shrink-0 items-center">
-            <p class="text-blue-600 font-bold text-2xl">FYP</p>
+            <span class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+              FYP
+            </span>
             {{-- <img class="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
             <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> --}}
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Projects</a>
-  
+              <a href="/projects" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Projects</a>
               <a href="/students" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Students</a>
-  
               <a href="/lecturers" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Lecturers</a>
-
               <a href="/roles" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Roles</a>
+              <a href="/supervisors" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Supervisors</a>
+              <a href="/examiners" class="text-slate-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Examiners</a>
             </div>
           </div>
         </div>
@@ -91,5 +93,8 @@
     </div>
 </div>
 
+<script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
+</script>
 </body>
 </html>

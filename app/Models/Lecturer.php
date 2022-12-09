@@ -24,7 +24,12 @@ class Lecturer extends Model
 
     public function student()
     {
-        return $this->hasMany(Student::class, 'student_id');
+        return $this->hasMany(Student::class, 'id');
+    }
+
+    public function project()
+    {
+        return $this->belongsToMany(Project::class, 'id');
     }
 
     public function roles()

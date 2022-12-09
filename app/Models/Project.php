@@ -22,6 +22,12 @@ class Project extends Model
         'duration',
         'progress',
         'status',
+        'student_id',
+        'supervisor_id',
+        'examiner1_id',
+        'examiner2_id',
+        'start_date',
+        'end_date',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -29,11 +35,21 @@ class Project extends Model
 
     public function student()
     {
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(Student::class, 'student_id', 'student_id');
     }
 
-    public function lecturer()
+    public function supervisor()
     {
-        return $this->hasMany(Lecturer::class);
+        return $this->belongsTo(Lecturer::class, 'supervisor_id', 'id');
+    }
+
+    public function examinerOne()
+    {
+        return $this->belongsTo(Lecturer::class, 'examiner1_id', 'id');
+    }
+
+    public function examinerTwo()
+    {
+        return $this->belongsTo(Lecturer::class, 'examiner2_id', 'id');
     }
 }

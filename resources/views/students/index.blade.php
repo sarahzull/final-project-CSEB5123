@@ -29,8 +29,8 @@
                 <table class="min-w-full border border-slate-300">
                   <thead class=" bg-slate-50">
                     <tr class="font-sans">
-                      <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
-                        Student ID
+                      <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300 ">
+                        ID
                       </th>
                       <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                         Name
@@ -46,11 +46,11 @@
                   <tbody>
                     @foreach($students as $student)
                       <tr class="bg-white border font-sans">
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                          {{ $student->student_id }}
+                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300 text-center">
+                          {{ $student->id ?? ''  }}
                         </td>
                         <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                          {{ $student->name }}
+                          {{ $student->name ?? ''  }}
                         </td>
                         <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                           
@@ -58,15 +58,15 @@
                         <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                           <div class="flex justify-center gap-3">
                             <div>
-                              <a href="#" class="text-slate-400 text-sm text-center">
+                              <a href="#" class="text-slate-400 text-sm text-center hover:text-slate-600">
                                 <i class="fas fa-edit"></i>
                               </a>
                             </div>
                             <div>
-                              <form action="{{ route('students.destroy', $student->student_id) }}" method="POST">
+                              <form action="{{ route('students.destroy', $student->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-slate-400 text-sm text-center">
+                                <button type="submit" class="text-slate-400 text-sm text-center hover:text-rose-600">
                                   <i class="fas fa-trash"></i>
                                 </button>
                               </form>

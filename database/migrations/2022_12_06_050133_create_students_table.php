@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->engine = 'InnoDB'; // <- add this
             $table->string('student_id')->unique(); // <- and this
-            $table->string('name');;
+            $table->string('name');
             $table->timestamps();
         });
     }

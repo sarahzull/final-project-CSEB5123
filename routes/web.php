@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\ExaminersController;
 use App\Http\Controllers\LecturersController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\SupervisorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +30,16 @@ Route::prefix('/students')->group(function () {
     Route::delete('/{id}', [StudentsController::class, 'destroy'])->name('students.destroy');
 });
 
-Route::get('lecturers', [LecturersController::class, 'index']);
+Route::prefix('/lecturers')->group(function () {
+    Route::get('/', [LecturersController::class, 'index'])->name('lecturers.index');
+    Route::get('/create', [LecturersController::class, 'create'])->name('lecturers.create');
+    Route::post('/', [LecturersController::class, 'store'])->name('lecturers.store');
+    Route::delete('/{id}', [LecturersController::class, 'destroy'])->name('lecturers.destroy');
+});
 
-Route::get('roles', [RolesController::class, 'index']);
+Route::prefix('/projects')->group(function () {
+    Route::get('/', [ProjectsController::class, 'index'])->name('projects.index');
+    Route::get('/create', [ProjectsController::class, 'create'])->name('projects.create');
+    Route::post('/', [ProjectsController::class, 'store'])->name('projects.store');
+    Route::delete('/{id}', [ProjectsController::class, 'destroy'])->name('projects.destroy');
+});

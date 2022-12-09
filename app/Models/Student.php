@@ -9,6 +9,9 @@ class Student extends Model
 {
     use HasFactory;
 
+    public $incrementing = false;
+    protected $keyType = 'student_id';
+
     protected $dates = [
         'created_at',
         'updated_at',
@@ -16,8 +19,9 @@ class Student extends Model
     ];
 
     protected $fillable = [
-        'name',
         'student_id',
+        'name',
+        'project_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -25,11 +29,6 @@ class Student extends Model
 
     public function project()
     {
-        return $this->hasOne(Project::class, 'project_id');
-    }
-
-    public function roles()
-    {
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(Project::class, 'project_id');
     }
 }
