@@ -17,7 +17,7 @@
         <p class="text-2xl font-bold text-zinc-800">Project Details</p>
 
         <div class="flex space-x-2 justify-end">
-          <a type="button" class="inline-block px-6 py-2.5 bg-blue-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out" href="{{ route('projects.create')}}">
+          <a type="button" class="inline-block px-6 py-2.5 bg-blue-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out" href="{{ route('projects.edit', $project->id)}}">
             Edit Project
           </a>
         </div>

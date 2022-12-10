@@ -31,8 +31,8 @@ class StudentsController extends Controller
 
     public function destroy($id)
     {
-        //Student::where('id', $id)->delete();
-        Student::destroy($id);
+        Student::where('student_id', $id)->delete();
+        //Student::destroy($id);
 
         return redirect(route('students.index'))->with('message', 'Student has been deleted');
     }

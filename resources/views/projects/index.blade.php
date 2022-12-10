@@ -30,16 +30,13 @@
                   <thead class=" bg-slate-50">
                     <tr class="font-sans">
                       <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300 ">
-                        Student ID
+                        Student Name
                       </th>
                       <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300 ">
-                        Student Name
+                        Supervisor
                       </th>
                       <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                         Project Title
-                      </th>
-                      <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
-                        Supervisor
                       </th>
                       <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                         
@@ -49,16 +46,13 @@
                   <tbody>
                     @foreach($projects as $project)
                       <tr class="bg-white border font-sans">
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300 text-center">
-                          {{ $project->student->student_id ?? '' }}
-                        </td>
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
+                        <td class=" text-gray-900 px-6 py-4 whitespace-normal border border-slate-300">
                           {{ $project->student->name ?? '' }}
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                          {{ $project->title }}
                         </td>
-                        <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
+                        <td class=" text-gray-900 px-6 py-4 whitespace-normal border border-slate-300">
                           {{ $project->supervisor->name ?? '' }}
+                        <td class=" text-gray-900 px-6 py-4 whitespace-normal border border-slate-300">
+                          {{ $project->title }}
                         </td>
                         <td class="text-center text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                           <a type="button" class="inline-block px-6 py-2.5 bg-cyan-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-cyan-700 focus:bg-cyan-700 focus:outline-none focus:ring-0 active:bg-cyan-800 transition duration-150 ease-in-out" href="{{ route('projects.show', $project->id)}}">

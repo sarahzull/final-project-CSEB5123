@@ -45,6 +45,13 @@ class ProjectsController extends Controller
         return view('projects.show', compact('project'));
     }
 
+    public function edit($id) 
+    {
+        $project = Project::with(['student', 'supervisor', 'examinerOne', 'examinerTwo'])->findOrFail($id);
+        return view('projects.edit', compact('project'));
+    }
+
+
     public function destroy($id)
     {
         Project::destroy($id);
