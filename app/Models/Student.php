@@ -9,7 +9,7 @@ class Student extends Model
 {
     use HasFactory;
 
-    public $incrementing = false;
+    // public $incrementing = false;
     // protected $keyType = 'student_id';
 
     protected $dates = [
