@@ -10,7 +10,7 @@ class Student extends Model
     use HasFactory;
 
     public $incrementing = false;
-    protected $keyType = 'student_id';
+    // protected $keyType = 'student_id';
 
     protected $dates = [
         'created_at',

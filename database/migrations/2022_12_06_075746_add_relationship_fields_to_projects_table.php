@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('student_id')->nullable();
-            $table->foreign('student_id')->references('student_id')->on('students');
+            $table->unsignedBigInteger('student_id')->nullable();
+            $table->foreign('student_id')->references('id')->on('students');
             $table->unsignedBigInteger('supervisor_id')->nullable();
             $table->foreign('supervisor_id')->references('id')->on('lecturers');
             $table->unsignedBigInteger('examiner1_id')->nullable();

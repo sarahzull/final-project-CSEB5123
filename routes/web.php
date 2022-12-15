@@ -6,6 +6,7 @@ use App\Http\Controllers\RolesController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\SupervisorsController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::prefix('/students')->group(function () {
@@ -45,3 +56,5 @@ Route::prefix('/projects')->group(function () {
     Route::get('/edit/{id}', [ProjectsController::class, 'edit'])->name('projects.edit');
     Route::delete('/{id}', [ProjectsController::class, 'destroy'])->name('projects.destroy');
 });
+
+require __DIR__.'/auth.php';

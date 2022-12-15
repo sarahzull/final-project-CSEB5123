@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('duration')->nullable();
             $table->string('progress')->nullable();
             $table->string('status')->nullable();
+            $table->string('category')->nullable();
             $table->timestamps();
         });
     }

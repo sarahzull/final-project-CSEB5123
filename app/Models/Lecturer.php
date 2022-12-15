@@ -22,11 +22,6 @@ class Lecturer extends Model
         'deleted_at',
     ];
 
-    public function student()
-    {
-        return $this->hasMany(Student::class, 'id');
-    }
-
     public function project()
     {
         return $this->belongsToMany(Project::class, 'id');
