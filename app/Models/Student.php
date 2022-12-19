@@ -21,7 +21,6 @@ class Student extends Model
     protected $fillable = [
         'student_id',
         'name',
-        'project_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -29,6 +28,6 @@ class Student extends Model
 
     public function project()
     {
-        return $this->belongsTo(Project::class, 'project_id');
+        return $this->hasOne(Project::class, 'id');
     }
 }

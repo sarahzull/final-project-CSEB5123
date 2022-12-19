@@ -9,7 +9,7 @@ class StudentsController extends Controller
 {
     public function index()
     {
-        $students = Student::all();
+        $students = Student::with('project');
 
         return view('students.index', compact('students'));
     }
@@ -29,10 +29,26 @@ class StudentsController extends Controller
         return redirect(route('students.index'));
     }
 
+    public function edit($id)
+    {
+        $student = Student::findOrFail($id);
+
+        return view('students.edit', compact('student'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        Student::where('id', $id)->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('students.index');
+    }
+
     public function destroy($id)
     {
-        Student::where('student_id', $id)->delete();
-        //Student::destroy($id);
+        // Student::where('student_id', $id)->delete();
+        Student::destroy($id);
 
         return redirect(route('students.index'))->with('message', 'Student has been deleted');
     }

@@ -34,26 +34,31 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('/students')->group(function () {
+Route::prefix('/students')->middleware(['auth'])->group(function () {
     Route::get('/', [StudentsController::class, 'index'])->name('students.index');
     Route::get('/create', [StudentsController::class, 'create'])->name('students.create');
     Route::post('/', [StudentsController::class, 'store'])->name('students.store');
+    Route::get('/edit/{id}', [StudentsController::class, 'edit'])->name('students.edit');
+    Route::patch('/{id}', [StudentsController::class, 'update'])->name('students.update');
     Route::delete('/{id}', [StudentsController::class, 'destroy'])->name('students.destroy');
 });
 
-Route::prefix('/lecturers')->group(function () {
+Route::prefix('/lecturers')->middleware(['auth'])->group(function () {
     Route::get('/', [LecturersController::class, 'index'])->name('lecturers.index');
     Route::get('/create', [LecturersController::class, 'create'])->name('lecturers.create');
     Route::post('/', [LecturersController::class, 'store'])->name('lecturers.store');
+    Route::get('/edit/{id}', [LecturersController::class, 'edit'])->name('lecturers.edit');
+    Route::patch('/{id}', [LecturersController::class, 'update'])->name('lecturers.update');
     Route::delete('/{id}', [LecturersController::class, 'destroy'])->name('lecturers.destroy');
 });
 
-Route::prefix('/projects')->group(function () {
+Route::prefix('/projects')->middleware(['auth'])->group(function () {
     Route::get('/', [ProjectsController::class, 'index'])->name('projects.index');
     Route::get('/create', [ProjectsController::class, 'create'])->name('projects.create');
     Route::post('/', [ProjectsController::class, 'store'])->name('projects.store');
     Route::get('/{id}', [ProjectsController::class, 'show'])->name('projects.show');
     Route::get('/edit/{id}', [ProjectsController::class, 'edit'])->name('projects.edit');
+    Route::patch('/{id}', [ProjectsController::class, 'update'])->name('projects.update');
     Route::delete('/{id}', [ProjectsController::class, 'destroy'])->name('projects.destroy');
 });
 

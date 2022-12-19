@@ -28,7 +28,7 @@ class ProjectsController extends Controller
     {
         Project::create([
             'title' => $request->title,
-            'student_id' => $request->student,
+            'id' => $request->student,
             'supervisor_id' => $request->supervisor,
             'examiner1_id' => $request->examinerOne,
             'examiner2_id' => $request->examinerTwo,
@@ -47,10 +47,23 @@ class ProjectsController extends Controller
 
     public function edit($id) 
     {
+        $lecturers = Lecturer::all();
         $project = Project::with(['student', 'supervisor', 'examinerOne', 'examinerTwo'])->findOrFail($id);
-        return view('projects.edit', compact('project'));
+
+        return view('projects.edit', compact('project', 'lecturers'));
     }
 
+    public function update(Request $request, $id)
+    {
+        Project::where('id', $id)->update([
+            'title' => $request->title,
+            'supervisor_id' => $request->supervisor,
+            'examiner1_id' => $request->examinerOne,
+            'examiner2_id' => $request->examinerTwo,
+        ]);
+
+        return redirect()->route('projects.show', [$id]);
+    }
 
     public function destroy($id)
     {

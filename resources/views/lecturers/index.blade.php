@@ -52,7 +52,7 @@
                             <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                               <div class="flex justify-center gap-3">
                                 <div>
-                                  <a href="#" class="text-slate-400 text-sm text-center hover:text-slate-600">
+                                  <a href="{{ route('lecturers.edit', $lecturer->id) }}" class="text-slate-400 text-sm text-center hover:text-slate-600">
                                     <i class="fas fa-edit"></i>
                                   </a>
                                 </div>

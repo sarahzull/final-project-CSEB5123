@@ -35,7 +35,12 @@ class Project extends Model
 
     public function student()
     {
-        return $this->belongsTo(Student::class, 'student_id', 'student_id');
+        return $this->belongsTo(Student::class, 'id', 'id');
+    }
+
+    public function lecturer()
+    {
+        return $this->hasMany(Lecturer::class, 'id');
     }
 
     public function supervisor()

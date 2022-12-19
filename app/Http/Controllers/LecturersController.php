@@ -17,9 +17,7 @@ class LecturersController extends Controller
 
     public function create()
     {
-        $roles = Role::pluck('name', 'id');
-
-        return view('lecturers.create', compact('roles'));
+        return view('lecturers.create');
     }
 
     public function store(Request $request)
@@ -29,6 +27,22 @@ class LecturersController extends Controller
         ]);
 
         return redirect(route('lecturers.index'));
+    }
+
+    public function edit($id)
+    {
+        $lecturer = Lecturer::findOrFail($id);
+        
+        return view('lecturers.edit', compact('lecturer'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        Lecturer::where('id', $id)->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('lecturers.index');
     }
 
     public function destroy($id)
