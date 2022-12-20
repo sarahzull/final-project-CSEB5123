@@ -22,6 +22,17 @@
 
             <div class="mb-4">
               <label class="block">
+                <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Category</span>
+                <select id="category" name="category" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
+                    <option>Choose a category</option>
+                    <option value="Development Project">Development Project</option>
+                    <option value="Research Project">Research Project</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="mb-4">
+              <label class="block">
                 <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Student Name</span>
                   <select id="student" name="student" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
                     <option>Choose a student</option>

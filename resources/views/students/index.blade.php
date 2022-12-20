@@ -29,9 +29,6 @@
                             Name
                           </th>
                           <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
-                            Project Title
-                          </th>
-                          <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                             Action
                           </th>
                         </tr>
@@ -44,9 +41,6 @@
                             </td>
                             <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                               {{ $student->name ?? ''  }}
-                            </td>
-                            <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                              
                             </td>
                             <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                               <div class="flex justify-center gap-3">

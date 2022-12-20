@@ -28,6 +28,6 @@ class Student extends Model
 
     public function project()
     {
-        return $this->hasOne(Project::class, 'id');
+        return $this->hasOne(Project::class, 'student_id');
     }
 }
