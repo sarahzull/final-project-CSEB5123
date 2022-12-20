@@ -17,7 +17,7 @@ In a common setup, the FYP coordinator will create a project and assign to stude
 2. Develop the system based on the refined requirements using Laravel framework.
 3. Use appropriate web technology to enhance the system UI/UX.
 4. Test your system using valid data before presentation.
-5. Produce a video to explain and demonstrate your system. Maximum video duration is 8 minutes. Video need to be submitted via brighten before 18 December 2022.
+5. Produce a video to explain and demonstrate your system. Maximum video duration is 8 minutes. Video need to be submitted via brighten before 20 December 2022.
 
 ### Assessment
 
