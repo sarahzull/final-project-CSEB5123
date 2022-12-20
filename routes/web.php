@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\ExaminersController;
 use App\Http\Controllers\LecturersController;
-use App\Http\Controllers\RolesController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\ProjectsController;
-use App\Http\Controllers\SupervisorsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectDetailsController;
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -7,6 +7,7 @@
 
         <title>FYP Tracker</title>
 
+        <!-- CSS -->
         <script src="https://kit.fontawesome.com/b7848caaf8.js" crossorigin="anonymous"></script>
 
         <!-- Fonts -->
@@ -14,6 +15,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

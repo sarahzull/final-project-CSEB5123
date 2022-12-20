@@ -17,6 +17,7 @@ class Lecturer extends Model
 
     protected $fillable = [
         'name',
+        'created_by_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -25,5 +26,10 @@ class Lecturer extends Model
     public function project()
     {
         return $this->belongsToMany(Project::class, 'id');
+    }
+
+    public function created_by()
+    {
+        return $this->belongsTo(User::class, 'created_by_id');
     }
 }

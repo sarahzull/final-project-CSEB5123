@@ -19,16 +19,18 @@ class Project extends Model
 
     protected $fillable = [
         'title',
-        'duration',
-        'progress',
-        'status',
+        'category',
         'student_id',
         'supervisor_id',
         'examiner1_id',
         'examiner2_id',
+        'created_by_id',
+        'duration',
+        'progress',
+        'status',
         'start_date',
         'end_date',
-        'created_at',
+        'created_by_id',
         'updated_at',
         'deleted_at',
     ];
@@ -56,5 +58,10 @@ class Project extends Model
     public function examinerTwo()
     {
         return $this->belongsTo(Lecturer::class, 'examiner2_id', 'id');
+    }
+
+    public function created_by()
+    {
+        return $this->belongsTo(User::class, 'created_by_id');
     }
 }

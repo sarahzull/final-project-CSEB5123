@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('lecturers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->unsignedBigInteger('created_by_id')->nullable();
+            $table->foreign('created_by_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

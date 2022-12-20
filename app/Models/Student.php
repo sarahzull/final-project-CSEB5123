@@ -21,6 +21,7 @@ class Student extends Model
     protected $fillable = [
         'student_id',
         'name',
+        'created_by_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -29,5 +30,10 @@ class Student extends Model
     public function project()
     {
         return $this->belongsTo(Project::class, 'student_id');
+    }
+
+    public function created_by()
+    {
+        return $this->belongsTo(User::class, 'created_by_id');
     }
 }

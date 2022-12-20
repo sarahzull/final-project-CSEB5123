@@ -8,6 +8,14 @@
   <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
+            <div class="flex space-x-2 justify-between">
+              <div>
+                <a href="{{ url()->previous() }}" class="text-slate-400 text-sm text-center hover:text-slate-600" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </a>
+              </div>
+            </div>
+            
             <div class="p-6">
               <form
               action="{{ route('students.store') }}"

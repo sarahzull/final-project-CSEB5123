@@ -17,6 +17,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('student_id')->unique(); // <- and this
             $table->string('name');
+            $table->unsignedBigInteger('created_by_id')->nullable();
+            $table->foreign('created_by_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

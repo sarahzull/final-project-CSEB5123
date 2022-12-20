@@ -28,16 +28,11 @@ class ProjectsController extends Controller
     {
         Project::create([
             'title'         => $request->title,
-            'id'            => $request->student,
+            'category'      => $request->status,
+            'student_id'    => $request->student,
             'supervisor_id' => $request->supervisor,
             'examiner1_id'  => $request->examinerOne,
             'examiner2_id'  => $request->examinerTwo,
-            'start_date'    => $request->start_date,
-            'end_date'      => $request->end_date,
-            'duration'      => $request->duration,
-            'progress'      => $request->progress,
-            'status'        => $request->status,
-            'category'      => $request->status,
         ]);
 
         // Project::create($request->all());
@@ -63,9 +58,15 @@ class ProjectsController extends Controller
     {
         Project::where('id', $id)->update([
             'title' => $request->title,
+            'category'  => $request->category,
             'supervisor_id' => $request->supervisor,
             'examiner1_id'  => $request->examinerOne,
             'examiner2_id'  => $request->examinerTwo,
+            'start_date'  => $request->start_date,
+            'end_date'  => $request->end_date,
+            'duration'  => $request->duration,
+            'progress'  => $request->progress,
+            'status'  => $request->status,
         ]);
 
         return redirect()->route('projects.show', [$id]);
