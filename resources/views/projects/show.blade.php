@@ -18,9 +18,11 @@
                 <a type="button" class="inline-block px-6 py-2.5 bg-blue-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out" href="{{ route('projects.edit', $project->id)}}">
                   Edit Project
                 </a>
+                @can('isAdmin')
                 <a type="button" class="inline-block px-6 py-2.5 bg-rose-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-rose-700 focus:bg-rose-700 focus:outline-none focus:ring-0 active:bg-rose-800 transition duration-150 ease-in-out" href="">
                   Delete Project
                 </a>
+                @endcan
               </div>
             </div>
     

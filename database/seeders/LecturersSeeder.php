@@ -6,7 +6,7 @@ use App\Models\Lecturer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class LecturersTableSeeder extends Seeder
+class LecturersSeeder extends Seeder
 {
     /**
      * Run the database seeds.

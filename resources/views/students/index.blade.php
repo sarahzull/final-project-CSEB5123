@@ -8,12 +8,14 @@
   <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-            
+            @can('isAdmin')
             <div class="flex space-x-2 justify-end">
               <a type="button" class="inline-block px-6 py-2.5 bg-blue-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out" href="{{ route('students.create')}}">
                 Add Student
               </a>
             </div>
+            @endcan
+            
     
             <div class="flex flex-col mt-2">
               <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -28,9 +30,11 @@
                           <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                             Name
                           </th>
+                          @can('isAdmin')
                           <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                             Action
                           </th>
+                          @endcan
                         </tr>
                       </thead>
                       <tbody>
@@ -42,24 +46,30 @@
                             <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                               {{ $student->name ?? ''  }}
                             </td>
+                            @can('isAdmin')
                             <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                               <div class="flex justify-center gap-3">
-                                <div>
-                                  <a href="{{ route('students.edit', $student->id) }}" class="text-slate-400 text-sm text-center hover:text-slate-600">
-                                    <i class="fas fa-edit"></i>
-                                  </a>
-                                </div>
-                                <div>
-                                  <form action="{{ route('students.destroy', $student->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="text-slate-400 text-sm text-center hover:text-rose-600">
-                                      <i class="fas fa-trash"></i>
-                                    </button>
-                                  </form>
-                                </div>
+                                @can('isAdmin')
+                                  <div>
+                                    <a href="{{ route('students.edit', $student->id) }}" class="text-slate-400 text-sm text-center hover:text-slate-600">
+                                      <i class="fas fa-edit"></i>
+                                    </a>
+                                  </div>
+                                @endcan
+                                @can('isAdmin')
+                                  <div>
+                                    <form action="{{ route('students.destroy', $student->id) }}" method="POST">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="text-slate-400 text-sm text-center hover:text-rose-600">
+                                        <i class="fas fa-trash"></i>
+                                      </button>
+                                    </form>
+                                  </div>
+                                @endcan
                               </div>
                             </td>
+                            @endcan
                           </tr>
                         @endforeach
                       </tbody>

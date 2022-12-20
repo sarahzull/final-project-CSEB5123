@@ -28,6 +28,6 @@ class Student extends Model
 
     public function project()
     {
-        return $this->hasOne(Project::class, 'student_id');
+        return $this->belongsTo(Project::class, 'student_id');
     }
 }

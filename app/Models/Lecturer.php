@@ -26,9 +26,4 @@ class Lecturer extends Model
     {
         return $this->belongsToMany(Project::class, 'id');
     }
-
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
 }
