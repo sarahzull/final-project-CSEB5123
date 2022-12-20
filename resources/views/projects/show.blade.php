@@ -84,10 +84,18 @@
                       <tbody>
                         <tr class="bg-white border font-sans text-center">
                           <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300 text-center">
-                            {{ date('d-m-Y', strtotime($project->start_date)) }}
+                            @if ($project->start_date == NULL)
+                              {{ ' ' }}
+                            @else
+                             {{ date('d-m-Y', strtotime($project->start_date)) }}
+                            @endif
                           </td>
                           <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                            {{ date('d-m-Y', strtotime($project->end_date)) }}
+                            @if ($project->end_date == NULL)
+                              {{ ' ' }}
+                            @else
+                             {{ date('d-m-Y', strtotime($project->end_date)) }}
+                            @endif
                           <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
                             @if ($project->duration == 1)
                               {{ $project->duration }} month
@@ -98,12 +106,18 @@
                             @endif
                           </td>
                           <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
+                            @if ($project->progress == 'Choose a progress')
+                              {{ ' ' }}
+                            @else
                             <span class="text-zinc-900">
                               {{ $project->progress }}
                             </span>
+                            @endif
                           </td>
                           <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
-                            @if ($project->status == 'On track')
+                            @if ($project->status == 'Choose a status')
+                              {{ ' ' }}
+                            @elseif ($project->status == 'On track')
                               <span class="bg-sky-700 p-2 text-white rounded-md">
                                 {{ $project->status }}
                               </span>

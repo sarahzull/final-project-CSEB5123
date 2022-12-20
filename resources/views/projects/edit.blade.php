@@ -27,8 +27,8 @@
                 <label class="block">
                   <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Category</span>
                   <select id="category" name="category" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                      <option value="Development Project" @if (old('category') == "Development Project") {{ 'selected' }} @endif>Development Project</option>
-                      <option value="Research Project" @if (old('category') == "Research Project") {{ 'selected' }} @endif>Research Project</option>
+                      <option value="Development Project" @if ($project->category == "Development Project") {{ 'selected' }} @endif>Development Project</option>
+                      <option value="Research Project" @if ($project->category == "Research Project") {{ 'selected' }} @endif>Research Project</option>
                   </select>
                 </label>
               </div>
@@ -89,14 +89,19 @@
               <div class="mb-4">
                 <label class="block">
                   <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Start Date</span>
-                  <input type="text" name="start_date" id="datepicker" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" value="{{ old('start_date', date('d-m-Y', strtotime($project->start_date))) }}">
+                    <span class="text-slate-500 text-xs">
+                      Current start date: 
+                      {{ date('d-m-Y', strtotime($project->start_date)) ?? '' }}
+                    </span>
+                  <input type="date" name="start_date" id="datepicker" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
                 </label>
               </div>
 
               <div class="mb-4">
                 <label class="block">
                   <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">End Date</span>
-                  <input type="text" name="end_date" id="end_date" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" value="{{ old('end_date', date('d-m-Y', strtotime($project->end_date))) }}">
+                  <span class="text-slate-500 text-xs">Current end date: {{ date('d-m-Y', strtotime($project->end_date)) }}</span>
+                  <input type="date" name="end_date" id="end_date" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
                 </label>
               </div>
 
@@ -111,9 +116,9 @@
                 <label class="block">
                   <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Progress</span>
                   <select id="progress" name="progress" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                      <option value="Milestone 1" @if (old('progress') == "Development Project") {{ 'selected' }} @endif>Milestone 1</option>
-                      <option value="Milestone 2" @if (old('progress') == "Milestone 2") {{ 'selected' }} @endif>Milestone 2</option>
-                      <option value="Final Report" @if (old('progress') == "Final Report") {{ 'selected' }} @endif>Final Report</option>
+                      <option value="Milestone 1" @if ($project->progress == "Development Project") {{ 'selected' }} @endif>Milestone 1</option>
+                      <option value="Milestone 2" @if ($project->progress == "Milestone 2") {{ 'selected' }} @endif>Milestone 2</option>
+                      <option value="Final Report" @if ($project->progress == "Final Report") {{ 'selected' }} @endif>Final Report</option>
                   </select>
                 </label>
               </div>
@@ -122,10 +127,10 @@
                 <label class="block">
                   <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Status</span>
                   <select id="status" name="status" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                      <option value="On track" @if (old('status') == "On track") {{ 'selected' }} @endif>On track</option>
-                      <option value="Delayed" @if (old('status') == "Delayed") {{ 'selected' }} @endif>Delayed</option>
-                      <option value="Extended" @if (old('status') == "Extended") {{ 'selected' }} @endif>Extended</option>
-                      <option value="Completed" @if (old('status') == "Completed") {{ 'selected' }} @endif>Completed</option>
+                      <option value="On track" @if ($project->status == "On track") {{ 'selected' }} @endif>On track</option>
+                      <option value="Delayed" @if ($project->status == "Delayed") {{ 'selected' }} @endif>Delayed</option>
+                      <option value="Extended" @if ($project->status == "Extended") {{ 'selected' }} @endif>Extended</option>
+                      <option value="Completed" @if ($project->status == "Completed") {{ 'selected' }} @endif>Completed</option>
                   </select>
                 </label>
               </div>

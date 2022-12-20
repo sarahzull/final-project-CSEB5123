@@ -35,7 +35,7 @@
               <label class="block">
                 <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Student Name</span>
                   <select id="student" name="student" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                    <option>Choose a student</option>
+                    <option selected>Choose a student</option>
                     @foreach ($students as $student)
                       <option value="{{ $student->id }}">{{ $student->name }}</option>
                     @endforeach
@@ -47,7 +47,7 @@
               <label class="block">
                 <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Supervisor</span>
                   <select id="supervisor" name="supervisor" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                    <option>Choose a supervisor</option>
+                    <option selected>Choose a supervisor</option>
                     @foreach ($lecturers as $lecturer)
                       <option value="{{ $lecturer->id }}">{{ $lecturer->name }}</option>
                     @endforeach
@@ -59,7 +59,7 @@
               <label class="block">
                 <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Examiner 1</span>
                   <select id="examiner1" name="examinerOne" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                    <option>Choose an examiner 1</option>
+                    <option selected>Choose an examiner 1</option>
                     @foreach ($lecturers as $lecturer)
                       <option value="{{ $lecturer->id }}">{{ $lecturer->name }}</option>
                     @endforeach
@@ -71,7 +71,7 @@
               <label class="block">
                 <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Examiner 2</span>
                   <select id="examiner2" name="examinerTwo" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                    <option>Choose an examiner 2</option>
+                    <option selected>Choose an examiner 2</option>
                     @foreach ($lecturers as $lecturer)
                       <option value="{{ $lecturer->id }}">{{ $lecturer->name }}</option>
                     @endforeach
@@ -104,7 +104,7 @@
               <label class="block">
                 <span class="block text-sm font-medium text-slate-700">Progress</span>
                 <select id="progress" name="progress" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                    <option>Choose a progress</option>
+                    <option selected>Choose a progress</option>
                     <option value="Milestone 1">Milestone 1</option>
                     <option value="Milestone 2">Milestone 2</option>
                     <option value="Final Report">Final Report</option>
@@ -116,7 +116,7 @@
               <label class="block">
                 <span class="block text-sm font-medium text-slate-700">Status</span>
                 <select id="status" name="status" class="mt-1 px-4 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
-                    <option>Choose a status</option>
+                    <option selected>Choose a status</option>
                     <option value="On track">On track</option>
                     <option value="Delayed">Delayed</option>
                     <option value="Extended">Extended</option>

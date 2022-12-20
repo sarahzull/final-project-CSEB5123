@@ -29,7 +29,7 @@ class Student extends Model
 
     public function project()
     {
-        return $this->belongsTo(Project::class, 'student_id');
+        return $this->belongsTo(Project::class, 'stud_id');
     }
 
     public function created_by()

@@ -20,7 +20,7 @@ class Project extends Model
     protected $fillable = [
         'title',
         'category',
-        'student_id',
+        'stud_id',
         'supervisor_id',
         'examiner1_id',
         'examiner2_id',
@@ -37,7 +37,7 @@ class Project extends Model
 
     public function student()
     {
-        return $this->belongsTo(Student::class, 'id', 'id');
+        return $this->belongsTo(Student::class, 'stud_id', 'id');
     }
 
     public function lecturer()

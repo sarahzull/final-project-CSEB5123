@@ -27,12 +27,17 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
         Project::create([
-            'title'         => $request->title,
-            'category'      => $request->status,
-            'student_id'    => $request->student,
+            'title' => $request->title,
+            'category'  => $request->category,
+            'stud_id' => $request->student,
             'supervisor_id' => $request->supervisor,
             'examiner1_id'  => $request->examinerOne,
             'examiner2_id'  => $request->examinerTwo,
+            'start_date'  => $request->start_date,
+            'end_date'  => $request->end_date,
+            'duration'  => $request->duration,
+            'progress'  => $request->progress,
+            'status'  => $request->status,
         ]);
 
         // Project::create($request->all());
