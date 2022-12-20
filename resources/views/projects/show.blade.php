@@ -100,7 +100,7 @@
                             @if ($project->duration == 1)
                               {{ $project->duration }} month
                             @elseif ($project->duration == NULL)
-                              0 month
+                              {{ ' ' }}
                             @else
                               {{ $project->duration }} months
                             @endif
