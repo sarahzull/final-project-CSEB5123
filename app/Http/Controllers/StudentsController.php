@@ -27,7 +27,7 @@ class StudentsController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect(route('students.index'));
+        return redirect(route('students.index'))->with('message', 'Student has been created');
     }
 
     public function edit($id)
@@ -43,7 +43,7 @@ class StudentsController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('students.index');
+        return redirect()->route('students.index')->with('message', 'Student has been updated');
     }
 
     public function destroy($id)
