@@ -10,8 +10,6 @@ class Project extends Model
     use HasFactory;
 
     protected $dates = [
-        'start_date',
-        'end_date',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -25,15 +23,14 @@ class Project extends Model
         'examiner1_id',
         'examiner2_id',
         'created_by_id',
-        'duration',
-        'progress',
-        'status',
-        'start_date',
-        'end_date',
-        'created_by_id',
         'updated_at',
         'deleted_at',
     ];
+
+    public function details()
+    {
+        return $this->hasMany(ProjectDetail::class);
+    }
 
     public function student()
     {

@@ -42,7 +42,7 @@ class LecturersController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('lecturers.index');
+        return redirect()->route('lecturers.index')->with('message', 'Lecturer has been updated');
     }
 
     public function destroy($id)
