@@ -20,6 +20,9 @@
               <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
                 Status
               </th>
+              <th scope="col" class="text-base font-medium text-slate-900 px-6 py-2 text-center border border-slate-300">
+                
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -76,6 +79,25 @@
                     {{ $detail->status }}
                   </span>
                 @endif
+              </td>
+              <td class=" text-gray-900 px-6 py-4 whitespace-nowrap border border-slate-300">
+                <div class="flex justify-center gap-3">
+                  <div>
+                    {{-- {{ route('lecturers.edit', $lecturer->id) }} --}}
+                    <a href="" class="text-slate-400 text-sm text-center hover:text-slate-600">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                  </div>
+                  <div>
+                    <form action="{{ route('details.destroy', $detail->id) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="text-slate-400 text-sm text-center hover:text-rose-600">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </td>
             </tr>
             @endforeach

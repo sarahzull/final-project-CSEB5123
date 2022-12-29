@@ -24,7 +24,8 @@ class StudentsController extends Controller
     {
         Student::create([
             'student_id' => $request->student_id,
-            'name' => $request->name
+            'name' => $request->name,
+            'created_by_id' => auth()->user()->id,
         ]);
 
         return redirect(route('students.index'))->with('message', 'Student has been created');

@@ -60,12 +60,12 @@
             <div class="flex justify-end mb-2">
               <div>
                 <button type="button" class="px-4 py-2.5 bg-teal-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-teal-700 focus:bg-teal-700 focus:outline-none focus:ring-0 active:bg-teal-800 transition duration-150 ease-in-out">
-                  <a href="{{ route('projects.edit', $project->id)}}">Add Activity</a>
+                  <a href="{{ route('details.create', ['details' => $project->details, 'project_id' => $project->id])}}">Add Activity</a>
                 </button>
               </div>
             </div>
 
-            @include('projects.project-details', ['details' => $project->details, 'project_id' => $project->id])
+            @include('projects.details-view', ['details' => $project->details, 'project_id' => $project->id])
     
           </div>
       </div>

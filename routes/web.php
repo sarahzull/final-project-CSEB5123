@@ -69,4 +69,11 @@ Route::prefix('/projects')->middleware(['auth'])->group(function () {
     });
 });
 
+Route::prefix('/details')->middleware(['auth'])->group(function () {
+    Route::get('/create/{project_id}', [ProjectDetailsController::class, 'create'])->name('details.create');
+    Route::post('/', [ProjectDetailsController::class, 'store'])->name('details.store');
+    Route::patch('/{id}', [ProjectDetailsController::class, 'update'])->name('details.update');
+    Route::delete('/{id}', [ProjectDetailsController::class, 'destroy'])->name('details.destroy');
+});
+
 require __DIR__.'/auth.php';

@@ -34,6 +34,7 @@ class ProjectsController extends Controller
             'supervisor_id' => $request->supervisor,
             'examiner1_id'  => $request->examinerOne,
             'examiner2_id'  => $request->examinerTwo,
+            'created_by_id' => auth()->user()->id,
         ]);
 
         // Project::create($request->all());

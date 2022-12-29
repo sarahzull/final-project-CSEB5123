@@ -24,6 +24,7 @@ class LecturersController extends Controller
     {
         Lecturer::create([
             'name' => $request->name,
+            'created_by_id' => auth()->user()->id,
         ]);
 
         return redirect(route('lecturers.index'));

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ProjectDetailsController extends Controller
 {
+    public function create()
+    {
+        return view('projects.details-add');
+    }
+
     public function store(Request $request)
     {
     	ProjectDetail::create([
@@ -18,6 +23,13 @@ class ProjectDetailsController extends Controller
             'project_id'  => $request->project_id,
         ]);
    
+        return back();
+    }
+
+    public function destroy($id)
+    {
+        ProjectDetail::destroy($id);
+
         return back();
     }
 }
