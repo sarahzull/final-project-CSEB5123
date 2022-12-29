@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lecturer;
 use App\Models\Project;
+use App\Models\ProjectDetail;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -33,11 +34,6 @@ class ProjectsController extends Controller
             'supervisor_id' => $request->supervisor,
             'examiner1_id'  => $request->examinerOne,
             'examiner2_id'  => $request->examinerTwo,
-            'start_date'  => $request->start_date,
-            'end_date'  => $request->end_date,
-            'duration'  => $request->duration,
-            'progress'  => $request->progress,
-            'status'  => $request->status,
         ]);
 
         // Project::create($request->all());
@@ -67,11 +63,6 @@ class ProjectsController extends Controller
             'supervisor_id' => $request->supervisor,
             'examiner1_id'  => $request->examinerOne,
             'examiner2_id'  => $request->examinerTwo,
-            'start_date'  => $request->start_date,
-            'end_date'  => $request->end_date,
-            'duration'  => $request->duration,
-            'progress'  => $request->progress,
-            'status'  => $request->status,
         ]);
 
         return redirect()->route('projects.show', [$id]);

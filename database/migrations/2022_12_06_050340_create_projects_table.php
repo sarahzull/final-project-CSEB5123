@@ -16,21 +16,16 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->string('title');
             $table->string('category')->nullable();
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
-            $table->integer('duration')->nullable();
-            $table->string('progress')->nullable();
-            $table->string('status')->nullable();
-            $table->unsignedBigInteger('student_id')->nullable();
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->string('title');
+            $table->unsignedBigInteger('stud_id')->nullable();
+            $table->foreign('stud_id')->references('id')->on('students')->onDelete('cascade');
             $table->unsignedBigInteger('supervisor_id')->nullable();
-            $table->foreign('supervisor_id')->references('id')->on('lecturers');
+            $table->foreign('supervisor_id')->references('id')->on('lecturers')->onDelete('cascade');
             $table->unsignedBigInteger('examiner1_id')->nullable();
-            $table->foreign('examiner1_id')->references('id')->on('lecturers');
+            $table->foreign('examiner1_id')->references('id')->on('lecturers')->onDelete('cascade');
             $table->unsignedBigInteger('examiner2_id')->nullable();
-            $table->foreign('examiner2_id')->references('id')->on('lecturers');
+            $table->foreign('examiner2_id')->references('id')->on('lecturers')->onDelete('cascade');
             $table->unsignedBigInteger('created_by_id')->nullable();
             $table->foreign('created_by_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

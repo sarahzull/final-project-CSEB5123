@@ -79,7 +79,7 @@
               </label>
             </div>
 
-            <div class="mb-4">
+            {{-- <div class="mb-4">
               <label class="block">
                 <span class="block text-sm font-medium text-slate-700">Start Date</span>
                 <input type="date" name="start_date" id="start_date" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
@@ -123,7 +123,7 @@
                     <option value="Completed">Completed</option>
                 </select>
               </label>
-            </div>
+            </div> --}}
         
             <div class="flex space-x-2 justify-end">
               <button type="submit" class="inline-block px-6 py-2.5 bg-violet-500 text-white font-semibold text-xs leading-tight uppercase rounded hover:bg-violet-700 focus:bg-violet-700 focus:outline-none focus:ring-0 active:bg-violet-800 transition duration-150 ease-in-out" href="{{ route('projects.create')}}">
