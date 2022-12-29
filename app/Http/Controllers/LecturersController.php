@@ -27,7 +27,7 @@ class LecturersController extends Controller
             'created_by_id' => auth()->user()->id,
         ]);
 
-        return redirect(route('lecturers.index'));
+        return redirect(route('lecturers.index'))->with('message', 'Lecturer has been created');
     }
 
     public function edit($id)

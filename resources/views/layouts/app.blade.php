@@ -9,11 +9,13 @@
 
         <!-- CSS -->
         <script src="https://kit.fontawesome.com/b7848caaf8.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
         <!-- Fonts -->
         {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
         <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>

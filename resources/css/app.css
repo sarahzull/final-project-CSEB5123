@@ -5,3 +5,7 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+.flatpickr-alt-input {
+  width: 100%;
+}

@@ -26,6 +26,26 @@ class ProjectDetailsController extends Controller
         return back();
     }
 
+    public function edit($id) 
+    {
+        $details = ProjectDetail::findOrFail($id);
+
+        return view('projects.details-edit', compact('details'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        ProjectDetail::where('id', $id)->update([
+            'start_date' => $request->start_date,
+            'end_date'  => $request->end_date,
+            'duration' => $request->duration,
+            'progress' => $request->progress,
+            'status'  => $request->status,
+        ]);
+
+        return back()->with('message', 'Project activity has been updated');
+    }
+
     public function destroy($id)
     {
         ProjectDetail::destroy($id);
