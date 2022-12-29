@@ -39,7 +39,7 @@ class ProjectsController extends Controller
 
         // Project::create($request->all());
 
-        return redirect(route('projects.index'));
+        return redirect(route('projects.index'))->with('message', 'Project has been created');
     }
 
     public function show($id) 
