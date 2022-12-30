@@ -38,7 +38,7 @@
     
             <div class="grid grid-cols-2 gap-2 my-2">
               <div>
-                <p class="text-lg">Student ID: <span class="font-bold text-stone-800">{{ $project->student->student_id ?? '' }}</span></p>
+                {{-- <p class="text-lg">Student ID: <span class="font-bold text-stone-800">{{ $project->student->student_id ?? '' }}</span></p> --}}
                 <p class="text-lg">Name: <span class="font-bold text-stone-800">{{ $project->student->name ?? '' }}</span></p>
                 <p class="text-lg">Project Title: <span class="font-bold text-stone-800 underline decoration-2 decoration-indigo-500">{{ $project->title }}</span></p>
                 <p class="text-lg">Category: 
